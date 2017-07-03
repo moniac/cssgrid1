@@ -1,4 +1,4 @@
-header, main, footer {
+header, main, footer, aside {
   background: grey;
 	min-height: 50px;
 	min-width: 100px;
@@ -6,12 +6,14 @@ header, main, footer {
 
 body {
   display: grid;
-  grid-template: 1fr 2fr 4fr / 1fr 2fr 1fr;
-  grid-gap: 1em 2em;
+  grid-template: 1fr 4fr 4fr / 1fr 2fr 1fr;
+  grid-gap: 1em;
   grid-template-areas:
   "header header header"
   "main main main"
-  "footer footer footer";
+  "sidebar sidebar sidebar "
+  "footer footer footer"
+  ;
 }
 
 header {
@@ -24,4 +26,20 @@ main {
 
 footer {
   grid-area: footer;
+}
+
+aside {
+  grid-area: sidebar;
+}
+
+@media (min-width: 800px) {
+  body {
+    grid-template: 1fr 4fr 4fr / 20vw 2fr;
+    grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "sidebar main main "
+    "footer footer footer"
+    ;
+  }
 }
