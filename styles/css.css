@@ -1,0 +1,27 @@
+header, main, footer {
+  background: grey;
+	min-height: 50px;
+	min-width: 100px;
+}
+
+body {
+  display: grid;
+  grid-template: 1fr 2fr 4fr / 1fr 2fr 1fr;
+  grid-gap: 1em 2em;
+  grid-template-areas:
+  "header header header"
+  "main main main"
+  "footer footer footer";
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
